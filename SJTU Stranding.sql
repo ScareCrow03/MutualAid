@@ -24,21 +24,22 @@ create table `user` (
     `telephone` varchar(255) not null,
     `email`  varchar(255) not null,
     `address` varchar(255) not null,
-    `score` double not null,
     `avatar` varchar(255),
     `qq` varchar(255),
+    `score` double not null default 0,
+    `number` int not null default 0,
+    `sum_score` double not null default 0,
     `description` varchar(255),
-
     primary key (`user_id`),
     foreign key (`user_id`) references `user_auth` (`user_id`)
 ) engine=InnoDB default charset=utf8;
 
-insert into `user` values (1, '管理员', '123456789', '13169703137@163.com', 'SJTU', 5.0, 'https://i.postimg.cc/YS01Ljrj/gzm.jpg', '123456789', '我是管理员！');
-insert into `user` values (2, 'ILoLy', '15017640364', 'iloly10@sjtu.edu.cn', 'SJTU-X12', 4.8, 'https://i.postimg.cc/Bvz2Tsbp/zyc.jpg', '3440233385', '我是用户zyc！');
-insert into `user` values (3, '高治铭', '12345678', 'gzm@sjtu.edu.cn', 'SJTU-D18', 1.8, 'https://i.postimg.cc/YS01Ljrj/gzm.jpg', '2643917629', '我是用户gzm！');
-insert into `user` values (4, '伟大的臧斌宇', '021-34207408', 'byzang@sjtu.edu.cn', '软件学院1312室', 5.0, 'https://i.postimg.cc/3RpsCSL4/image.png', '123456789', '我是软件学院院长臧斌宇！');
-insert into `user` values (5, '英俊的陈榕', '021-34204789', 'rongchen@sjtu.eud.cn', '软件学院3402室', 5.0, 'https://i.postimg.cc/cCSVDRjD/image.jpg', '123456789', '我是软件学院教授陈榕！');
-insert into `user` values (6, '苗条的陈昊鹏', '021-34204124', 'chen-hp@sjtu.edu.cn', '软件学院1111室', 5.0, 'https://i.postimg.cc/7Lpvz8Nr/image.jpg', '123456789', '我是软件学院副教授陈昊鹏！');
+insert into `user` values (1, '管理员', '123456789', '13169703137@163.com', 'SJTU', 'https://i.postimg.cc/YS01Ljrj/gzm.jpg', '123456789', 0, 0, 0, '我是管理员！');
+insert into `user` values (2, 'ILoLy', '15017640364', 'iloly10@sjtu.edu.cn', 'SJTU-X12', 'https://i.postimg.cc/Bvz2Tsbp/zyc.jpg', '3440233385', 0, 0, 0, '我是用户zyc！');
+insert into `user` values (3, '高治铭', '12345678', 'gzm@sjtu.edu.cn', 'SJTU-D18', 'https://i.postimg.cc/YS01Ljrj/gzm.jpg', '2643917629', 0, 0, 0, '我是用户gzm！');
+insert into `user` values (4, '伟大的臧斌宇', '021-34207408', 'byzang@sjtu.edu.cn', '软件学院1312室', 'https://i.postimg.cc/3RpsCSL4/image.png', '123456789', 0, 0, 0, '我是软件学院院长臧斌宇！');
+insert into `user` values (5, '英俊的陈榕', '021-34204789', 'rongchen@sjtu.eud.cn', '软件学院3402室', 'https://i.postimg.cc/cCSVDRjD/image.jpg', '123456789', 0, 0, 0, '我是软件学院教授陈榕！');
+insert into `user` values (6, '苗条的陈昊鹏', '021-34204124', 'chen-hp@sjtu.edu.cn', '软件学院1111室', 'https://i.postimg.cc/7Lpvz8Nr/image.jpg', '123456789', 0, 0, 0, '我是软件学院副教授陈昊鹏！');
 
 
 drop table if exists `item`;
@@ -68,6 +69,7 @@ create table `order` (
     `item_id` int not null,
     `user_id` int not null,
     `buyer` int not null,
+    `score` double default 0,
     `state` smallint not null comment '0进行中，1交易完成，2拒绝，3取消',
     `time` timestamp not null,
     primary key (`order_id`),
@@ -75,10 +77,10 @@ create table `order` (
     foreign key (`user_id`) references `user_auth` (`user_id`),
     foreign key (`buyer`) references `user_auth` (`user_id`)
 ) engine=InnoDB default charset=utf8;
-insert into `order` values (1, 1, 2, 3, 1, '2023-4-20 10:00:00.00');
-insert into `order` values (2, 2, 2, 3, 2, '2023-4-20 10:00:00.00');
-insert into `order` values (3, 3, 2, 3, 3, '2023-4-20 10:00:00.00');
-insert into `order` values (4, 4, 3, 2, 0, '2023-4-20 10:00:00.00');
+insert into `order` values (1, 1, 2, 3, 0, 1, '2023-4-20 10:00:00.00');
+insert into `order` values (2, 2, 2, 3, 0, 2, '2023-4-20 10:00:00.00');
+insert into `order` values (3, 3, 2, 3, 0, 3, '2023-4-20 10:00:00.00');
+insert into `order` values (4, 4, 3, 2, 0, 0, '2023-4-20 10:00:00.00');
 
 drop table if exists `favorite`;
 create table `favorite` (
