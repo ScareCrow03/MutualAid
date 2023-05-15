@@ -13,6 +13,9 @@ create table `user_auth` (
 insert into `user_auth` values (1, 'root', '123456', 1);
 insert into `user_auth` values (2, 'zyc', '123456', 0);
 insert into `user_auth` values (3, 'gzm', '123456', 0);
+insert into `user_auth` values (4, 'zby', '123456', 0);
+insert into `user_auth` values (5, 'cr', '123456', 0);
+insert into `user_auth` values (6, 'chp', '123456', 0);
 
 drop table if exists `user`;
 create table `user` (
@@ -30,9 +33,12 @@ create table `user` (
     foreign key (`user_id`) references `user_auth` (`user_id`)
 ) engine=InnoDB default charset=utf8;
 
-insert into `user` values (1, '管理员', '123456789', '13169703137@163.com', 'SJTU', 5.0, 'http://img3m9.ddimg.cn/12/36/1546133799-1_w_1.jpg', '123456789', '我是管理员！');
-insert into `user` values (2, 'ILoLy', '15017640364', 'iloly10@sjtu.edu.cn', 'SJTU-X12', 4.8, 'http://img3m7.ddimg.cn/48/0/24106647-1_w_6.jpg', '3440233385', '我是用户zyc！');
-insert into `user` values (3, 'high', '12345678', 'gzm@sjtu.edu.cn', 'SJTU-D18', 1.8, 'http://img3m6.ddimg.cn/32/30/1204489076-1_w_1.jpg', '123456789', '我是用户gzm！');
+insert into `user` values (1, '管理员', '123456789', '13169703137@163.com', 'SJTU', 5.0, 'https://i.postimg.cc/YS01Ljrj/gzm.jpg', '123456789', '我是管理员！');
+insert into `user` values (2, 'ILoLy', '15017640364', 'iloly10@sjtu.edu.cn', 'SJTU-X12', 4.8, 'https://i.postimg.cc/Bvz2Tsbp/zyc.jpg', '3440233385', '我是用户zyc！');
+insert into `user` values (3, '高治铭', '12345678', 'gzm@sjtu.edu.cn', 'SJTU-D18', 1.8, 'https://i.postimg.cc/YS01Ljrj/gzm.jpg', '2643917629', '我是用户gzm！');
+insert into `user` values (4, '伟大的臧斌宇', '021-34207408', 'byzang@sjtu.edu.cn', '软件学院1312室', 5.0, 'https://i.postimg.cc/3RpsCSL4/image.png', '123456789', '我是软件学院院长臧斌宇！');
+insert into `user` values (5, '英俊的陈榕', '021-34204789', 'rongchen@sjtu.eud.cn', '软件学院3402室', 5.0, 'https://i.postimg.cc/cCSVDRjD/image.jpg', '123456789', '我是软件学院教授陈榕！');
+insert into `user` values (6, '苗条的陈昊鹏', '021-34204124', 'chen-hp@sjtu.edu.cn', '软件学院1111室', 5.0, 'https://i.postimg.cc/7Lpvz8Nr/image.jpg', '123456789', '我是软件学院副教授陈昊鹏！');
 
 
 drop table if exists `item`;
@@ -50,11 +56,11 @@ create table `item` (
     primary key (`item_id`),
     foreign key (`user_id`) references `user_auth` (`user_id`)
 ) engine=InnoDB default charset=utf8;
-insert into `item` values (1, 2, 1, '小王子', 'http://img3m9.ddimg.cn/75/6/25067469-1_u_2.jpg', 2, '99成新《小王子》两本', '书', '', '');
-insert into `item` values (2, 2, 0, '大王子', 'http://img3m9.ddimg.cn/75/6/25067469-1_u_2.jpg', 5, '9成新《大王子》五本', '二手', '书', '');
-insert into `item` values (3, 2, 0, '老王子', 'http://img3m9.ddimg.cn/75/6/25067469-1_u_2.jpg', 7, '8成新《老王子》七本', '书', '老东西', '爆金币');
-insert into `item` values (4, 2, 0, '深入理解计算机系统', 'http://img3m7.ddimg.cn/48/0/24106647-1_w_6.jpg', 12, '第三版重磅上市！', '书', 'cs', 'se');
-insert into `item` values (5, 2, 0, 'Effective C++', 'http://img3m6.ddimg.cn/96/25/21000966-1_u_12.jpg', 120, '通向C++精微奥妙之门', '书', 'c++', 'se');
+insert into `item` values (1, 2, 1, '小王子', 'http://img3m9.ddimg.cn/75/6/25067469-1_u_2.jpg', 2, '99成新《小王子》两本', '图书', '', '');
+insert into `item` values (2, 2, 0, '大王子', 'http://img3m9.ddimg.cn/75/6/25067469-1_u_2.jpg', 5, '9成新《大王子》五本', '教育', '图书', '');
+insert into `item` values (3, 2, 0, '老王子', 'http://img3m9.ddimg.cn/75/6/25067469-1_u_2.jpg', 7, '8成新《老王子》七本', '图书', '', '教育');
+insert into `item` values (4, 3, 0, '深入理解计算机系统', 'http://img3m7.ddimg.cn/48/0/24106647-1_w_6.jpg', 12, '第三版重磅上市！', '图书', '数码', '');
+insert into `item` values (5, 2, 0, 'Effective C++', 'http://img3m6.ddimg.cn/96/25/21000966-1_u_12.jpg', 120, '通向C++精微奥妙之门', '图书', '数码', '教育');
 
 drop table if exists `order`;
 create table `order` (
@@ -72,7 +78,7 @@ create table `order` (
 insert into `order` values (1, 1, 2, 3, 1, '2023-4-20 10:00:00.00');
 insert into `order` values (2, 2, 2, 3, 2, '2023-4-20 10:00:00.00');
 insert into `order` values (3, 3, 2, 3, 3, '2023-4-20 10:00:00.00');
-insert into `order` values (4, 4, 2, 3, 0, '2023-4-20 10:00:00.00');
+insert into `order` values (4, 4, 3, 2, 0, '2023-4-20 10:00:00.00');
 
 drop table if exists `favorite`;
 create table `favorite` (
@@ -125,10 +131,23 @@ create table `community` (
     `image` varchar(255),
     primary key (`community_id`)
 ) engine=InnoDB default charset=utf8;
-insert into `community` values (1, '书籍', 'http://img3m9.ddimg.cn/75/6/25067469-1_u_2.jpg');
-insert into `community` values (2, '汽车', 'http://img3m9.ddimg.cn/75/6/25067469-1_u_2.jpg');
-insert into `community` values (3, '黑人', 'http://img3m9.ddimg.cn/75/6/25067469-1_u_2.jpg');
-
+insert into `community` values (1, '图书', 'https://i.postimg.cc/nhkfND2M/image.jpg');
+insert into `community` values (2, '数码', 'https://i.postimg.cc/xCsrqDhQ/image.jpg');
+insert into `community` values (3, '电器', 'https://i.postimg.cc/XvSn0WSD/image.png');
+insert into `community` values (4, '办公', 'https://i.postimg.cc/NMQY5x06/image.jpg');
+insert into `community` values (5, '运动', 'https://i.postimg.cc/gjrCZtbZ/image.jpg');
+insert into `community` values (6, '食品', 'https://i.postimg.cc/W1rP8yFm/image.jpg');
+insert into `community` values (7, '医药', 'https://i.postimg.cc/vTjpL7GS/image.jpg');
+insert into `community` values (8, '衣物', 'https://i.postimg.cc/cJBGy8cr/image.jpg');
+insert into `community` values (9, '玩具', 'https://i.postimg.cc/G23wchMz/image.jpg');
+insert into `community` values (10, '清洁', 'https://i.postimg.cc/C51g4Lkd/image.jpg');
+insert into `community` values (11, '生活', 'https://i.postimg.cc/gjTPtFHs/image.jpg');
+insert into `community` values (12, '出行', 'https://i.postimg.cc/nhQn5z5D/image.jpg');
+insert into `community` values (13, '宠物', 'https://i.postimg.cc/28tz2vHY/image.jpg');
+insert into `community` values (14, '文娱', 'https://i.postimg.cc/fbNQrvmG/image.jpg');
+insert into `community` values (15, '教育', 'https://i.postimg.cc/FKyNr6hF/image.jpg');
+insert into `community` values (16, '工具', 'https://i.postimg.cc/3rS7xmQG/image.jpg');
+insert into `community` values (17, '其他', 'https://i.postimg.cc/fTVstyMr/image.jpg');
 
 drop table if exists `post`;
 create table `post` (
