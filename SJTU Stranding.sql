@@ -59,9 +59,19 @@ create table `item` (
 ) engine=InnoDB default charset=utf8;
 insert into `item` values (1, 2, 1, '小王子', 'http://img3m9.ddimg.cn/75/6/25067469-1_u_2.jpg', 2, '99成新《小王子》两本', '图书', '', '');
 insert into `item` values (2, 2, 0, '大王子', 'http://img3m9.ddimg.cn/75/6/25067469-1_u_2.jpg', 5, '9成新《大王子》五本', '教育', '图书', '');
-insert into `item` values (3, 2, 0, '老王子', 'http://img3m9.ddimg.cn/75/6/25067469-1_u_2.jpg', 7, '8成新《老王子》七本', '图书', '', '教育');
-insert into `item` values (4, 3, 0, '深入理解计算机系统', 'http://img3m7.ddimg.cn/48/0/24106647-1_w_6.jpg', 12, '第三版重磅上市！', '图书', '数码', '');
+insert into `item` values (3, 2, 0, '老王子', 'http://img3m9.ddimg.cn/75/6/25067469-1_u_2.jpg', 7, '8成新《老王子》七本', '图书', '教育', '');
+insert into `item` values (4, 3, 0, '深入理解计算机系统', 'http://img3m7.ddimg.cn/48/0/24106647-1_w_6.jpg', 12, '第三版重磅上市！', '图书', '', '');
 insert into `item` values (5, 2, 0, 'Effective C++', 'http://img3m6.ddimg.cn/96/25/21000966-1_u_12.jpg', 120, '通向C++精微奥妙之门', '图书', '数码', '教育');
+insert into `item` values (6, 6, 0, 'iphone13', 'https://i.postimg.cc/90RQZcx3/iphone13.jpg', 1, 'iphone13，浑身都出彩。', '数码', '电器', '');
+insert into `item` values (7, 6, 0, 'iphone14', 'https://i.postimg.cc/dZ9YsNJF/iphone14.jpg', 1, 'iphone14，实打实的实力。', '数码', '电器', '');
+insert into `item` values (8, 6, 0, 'iphone14pro', 'https://i.postimg.cc/Hj0H9nXN/iphone14pro.jpg', 1, 'iphone14，iPhone 的巅峰之作。', '数码', '电器', '');
+insert into `item` values (9, 6, 0, 'iphoneSE', 'https://i.postimg.cc/1f9SCSK3/iphoneSE.jpg', 1, 'iphoneSE，够强够实惠。', '数码', '电器', '');
+insert into `item` values (10, 4, 0, 'HUAWEI P60 Pro', 'https://i.postimg.cc/XNP1cMgN/huawei-P60-Pro.webp', 1, '洛可可白 鸿蒙手机', '数码', '电器', '');
+insert into `item` values (11, 4, 0, 'HUAWEI P60', 'https://i.postimg.cc/qqWmkn76/huawei-P60.webp', 1, '羽砂黑 鸿蒙手机', '数码', '电器', '');
+insert into `item` values (12, 4, 0, 'HUAWEI Mate 50 Pro 256GB', 'https://i.postimg.cc/xTbx6ssv/huawei-Mate50-Pro.webp', 1, '曜金黑（昆仑玻璃）；北斗卫星消息 | 超光变XMAGE影像', '数码', '电器', '');
+insert into `item` values (13, 4, 0, 'HUAWEI Mate 50 128GB', 'https://i.postimg.cc/W1L9CMKQ/huawei-Mate50.webp', 1, '冰霜银；北斗卫星消息 | 超光变XMAGE影像', '数码', '电器', '');
+
+
 
 drop table if exists `order`;
 create table `order` (
@@ -103,7 +113,6 @@ create table `chat` (
     foreign key (`receiver`) references `user_auth` (`user_id`)
 ) engine=InnoDB default charset=utf8;
 insert into `chat` values (1, 2, 3);
-insert into `chat` values (2, 1, 2);
 
 drop table if exists `chat_info`;
 create table `chat_info` (
