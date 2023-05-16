@@ -1,0 +1,38 @@
+.itemdetail{
+    margin: 20px auto;
+    padding: 20px;
+    width: 1000px;
+    height: 500px;
+    background-color: white;
+    position:relative;
+
+    box-shadow: 0 0 50px rgb(0 0 0 / 10%);
+    background-color: rgba(193,210,240,0.3);
+}
+
+.itemimage{
+    height: 300px;
+    width: 300px;
+    float: left;
+}
+
+.description{
+    margin-left: 400px;
+    margin-top: 20px;
+    font-family: 华文楷体;
+    font-size: 20px;
+}
+
+.buttons{
+    position: absolute;
+    bottom: 30px;
+    left: 350px;
+}
+
+.button{
+    margin-right: 10px;
+}
+
+/*.background{*/
+/*    background-image:'http://img3m7.ddimg.cn/48/0/24106647-1_w_6.jpg';*/
+/*}*/

@@ -1,0 +1,85 @@
+.sider{
+    min-height: 100vh;
+    color:red;
+    background-image: url(https://pic1.zhimg.com/80/v2-ee04208afc7df26fb3f256866d56e9a9_720w.webp?source=1940ef5c);
+}
+
+
+
+.menu{
+
+    background-color: rgb(30, 39, 92);
+
+}
+.header{
+    background-image: url("../pictures/homebg.png");
+    /* 背景图垂直、水平均居中 */
+    background-position: center center;
+    /* 背景图不平铺 */
+    background-repeat: no-repeat;
+    /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+    background-attachment: fixed;
+    /* 让背景图基于容器大小伸缩 */
+    background-size: cover;
+    height: 100px;
+    padding-left: 100px;
+    padding-top: 30px;
+    padding-right: 100px;
+}
+
+.home{
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin:0px;
+
+}
+.username{
+    font-family: 幼圆;
+    font-size:20px
+}
+
+.title{
+    display: inline-block;
+
+    font-size: 50px;
+    font-family: fantasy;
+}
+
+.logo{
+    float: right;
+    margin-top:-20px;
+    width:100px;
+    height:100px;
+
+}
+.logoimg{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+}
+
+.header-left{
+    display: inline-block;
+}
+
+.content{
+    height:100%;
+    margin: 5px 10px;
+    background-image: url("../pictures/homebg.png");
+
+    /* 背景图垂直、水平均居中 */
+    background-position: center center;
+    /* 背景图不平铺 */
+    background-repeat: no-repeat;
+    /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+    background-attachment: fixed;
+    /* 让背景图基于容器大小伸缩 */
+    background-size: cover;
+    background-color:whitesmoke;
+    opacity: 1;
+
+}
