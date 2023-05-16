@@ -1,0 +1,60 @@
+
+.bubble1{
+    max-width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    color: #000;
+    word-wrap:break-word;
+    word-break:normal;
+
+
+}
+.clayout{
+    /*box-shadow: 0 0 50px rgb(0 0 0 / 10%);*/
+    /*background-color: rgba(193,210,240,0.3);*/
+    opacity: 0.7;
+
+}
+.cheader{
+    background-color:white;
+}
+/*.side{*/
+/*!*    background-color:  #808080;*!*/
+/*    box-shadow: 0 0 50px rgb(0 0 0 / 10%);*/
+/*    background-color: rgba(193,210,240,0.5);*/
+
+/*}*/
+.item-left1 .bubble1{
+    margin-left: 15px;
+}
+
+
+.item1{
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+}
+
+.avatar1 img{
+    margin-left: 10px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+    width:10px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow:inset006pxrgba(0,0,0,0.3);
+    border-radius:8px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius:10px;
+    background:rgba(0,0,0,0);
+    -webkit-box-shadow:inset006pxrgba(0,0,0,0.5);
+}

@@ -1,0 +1,30 @@
+.communitycard{
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 50px rgb(0 0 0 / 10%);
+    background-color: rgba(193,210,240,0.5);
+    font-family: 华文楷体;
+    font-size: 16px;
+}
+
+.img{
+    height: 194px;
+    width: 129px;
+    margin:10px auto;
+}
+
+.title1{
+    height: 50px;
+    font-family: 华文楷体;
+    font-size: 25px;
+    font-weight:700;
+}
+
+.cv{
+
+    margin-left: 40px;
+
+}
